@@ -5,8 +5,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    padding: 24px;
-    background: grey;
+    padding: 50px 24px;
     height: 100%;
 
     &_Header {
@@ -15,8 +14,7 @@
        display: flex;
        justify-content: space-between;
        align-items: center;
-       background: blue;
-       margin-bottom: 66px;
+       margin-bottom: 24px;
 
 
        button {
@@ -35,19 +33,26 @@
         }
        }
 
+       
        &_CartBtn {
-         background: #181C2E;
-         display: flex;
-
-       }
+           background: #181C2E;
+           display: flex;
+           
+        }
     }
-
+    
+    &_Welcome {
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
     &_Input {
-        background: red;
         width: 100%;
         height: 62px;
         display: flex;
         align-items: center;
+        margin-top: 16px;
         margin-bottom: 32px ;
         
         img {
@@ -57,20 +62,20 @@
         }
 
         input {
-            background: #A0A5BA;
+            background: #f6f6f6;
             color: #676767;
             width: 100%;
-            padding:23px  47px ; 
+            padding: 0 47px; 
             height: 62px;
             border-radius: 8px;
             font-size: 14px;
+            border: none;
         }
     }
 
     &_Categories {
         display: flex;
         flex-direction: column;
-        background: red;
         width: 100%;
         overflow: hidden;
 
@@ -80,8 +85,16 @@
             justify-content: space-between;
             align-items: center;
 
+            h2  {
+                font-family: 'Sen';
+                font-size: 20px;
+                font-weight: 200;
+            }
+
+
 
             button {
+                font-family: 'Sen';
                 background: none;
                 border: none;
                 cursor: pointer;
@@ -96,10 +109,8 @@
      :global(.swiper-wrapper) {
         display: flex ;
         flex-direction: row;
-        background: pink;
-        height: 184px;
+        height: 220px;
         width: 100%;
-        
       }
 
         
@@ -109,10 +120,10 @@
         justify-content: center;
         width: auto ;
         flex-shrink: 0;
+        padding: 0 10px;
 
         button {
             width: 147px;
-            background: red;
             height: 184px;
             border-radius: 19px;
             padding: 8px;
@@ -125,6 +136,8 @@
             border: none;
             flex-direction: column;
             padding-bottom: 16px;
+            background:none;
+            box-shadow: 0 4px 12px rgba(0, 0 , 0 ,0.3);
 
             cursor: pointer;
             &:hover {
@@ -134,7 +147,6 @@
             div {
                 display: flex;
                 flex-direction: column;
-                background: blue;
                 width: 100%;
                 gap: 7px;
 
@@ -152,13 +164,13 @@
                     display: flex;
                     flex-direction: row;
                     width: 100%;
-                    background: pink;
                     justify-content: space-between;
                     align-items: center;
                     margin: 0;
 
                     
                     h4 {
+                        font-family: 'Sen';
                         font-size: 14px;
                         margin: 0;
                         font-weight: 200;
@@ -166,6 +178,8 @@
                     }
 
                     strong {
+                        font-family: 'Sen';
+                        font-weight: 100;
                         font-size: 16px;
                     }
                 

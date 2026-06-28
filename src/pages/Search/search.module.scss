@@ -1,0 +1,253 @@
+.SearchPage {
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 24px;
+    height: 100%;
+
+    &_Header {
+        width: 100%;
+        height: 49px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 24px;
+         div {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            align-items: center;
+             button {
+                background: #ECF0F4;
+                width: 45px;
+                height: 45px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                border-radius: 50%;
+                font-weight: 300;
+                cursor: pointer;
+                   &:hover {
+                    opacity: 0.7;
+                   }
+
+             }
+
+             h2 {
+                font-family: 'Sen';
+                font-weight: 400;
+                font-size: 17px;
+             }
+         }
+
+         button {
+            background: #181C2E;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+              &:hover {
+                opacity: 0.7;
+              }
+         }     
+    }
+
+    &_Input {
+        width: 100%;
+        height: 62px;
+        display: flex;
+        position: relative;
+        align-items: center;
+        
+        img {
+            position: absolute;
+            z-index: 99;
+            margin: 1px 12px 0 20px ;
+            width: 15px;
+
+        }
+
+        input {
+            width: 100%;
+            height: 62px;
+            border-radius: 10px;
+            padding: 0  20px 0 47px  ;
+            border: none;
+            background: #f6f6f6;
+
+        }
+    }
+
+    &_Recent {
+        width: 100%;
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+
+        h2 {
+            font-family: 'Sen';
+            font-weight: 300;
+            font-size: 20px;
+        }
+
+    }
+
+    &_Suggested {
+        width: 100%;
+        height: 264px;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+
+        h2 {
+            font-family: 'Sen';
+            font-weight: 300;
+            font-size: 20px;
+        }
+
+        &_Item {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 64px;
+            border-bottom: 1px solid #EBEBEB;
+            margin-bottom: 14px;
+
+            &_Img {
+                display: flex;
+                width: 60px;
+                height: 50px;
+                border-radius: 8px;
+                background: blue;
+
+
+            }
+
+            &_Info {
+                display: flex;
+                flex-direction: column;
+                height: 64px;
+                padding: 3px 0 0 10px;
+                gap: 6px;
+                
+                h3 {
+                    font-family: 'Sen';
+                    font-weight: 300;
+                    margin: 0;
+                }
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    gap: 4px ;
+                    margin: 0;
+
+                    h4 {
+                        font-family: 'Sen';
+                        font-weight: 300;
+                        margin: 0;
+                        height: 10px;
+                        display: flex;
+                        align-items: center;
+
+                    }
+                }
+                
+            }
+
+          
+        }
+    }
+
+    &_Popular {
+        margin-top: 46px;
+        display: flex;
+        flex-direction: column;
+        padding: 0 12px;
+
+        h2 {
+            margin: 0;
+            width: 100%;
+            font-family: 'Sen';
+            font-weight: 300;
+            font-size: 20px;
+        }
+
+        &_Items {
+             display: grid;
+             grid-template-columns: repeat(auto-fill , minmax(153px, 1fr));
+             gap: 24px;
+            
+
+            &_Item {
+                background: none;
+                display: flex;
+                width: 100%;
+                height: 144px;
+                flex-direction: column;
+                align-items: center;
+                margin: 0;
+                padding: 0;
+                position: relative;
+                margin-top: 23px;
+                cursor: pointer;
+
+                &_Img {
+                    background: blue;
+                    width: 122px;
+                    height: 84px;
+                    border-radius: 15px;
+                    z-index: 3;
+                    position: absolute;
+                }
+
+                &_Info {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0;
+                    gap: 4px;
+                    width: 100%;
+                    height: 56%;
+                    margin-top: 48px;
+                    justify-content: end;
+                    padding-bottom: 16px;
+                    border-radius: 25px;
+                    z-index: 2;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+                    div {
+                        padding: 0 12px;
+
+                        h3 {
+                            margin: 0;
+                            font-family: 'SenBald';
+                            font-weight: 300;
+                            font-size: 15px;
+    
+                        }
+    
+                        h4 {
+                            margin: 0;
+                            font-family: 'Sen';
+                            font-size:13px ;
+                            font-weight: 300;
+                        }
+                    }
+
+                     
+
+                }
+                
+
+
+            }
+        }
+    }
+}

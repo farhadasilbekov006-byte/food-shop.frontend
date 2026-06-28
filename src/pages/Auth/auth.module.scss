@@ -1,0 +1,288 @@
+.AuthPage {
+    margin: 0;
+    max-width: 375px;
+    height: 100%;
+    background: #121223;
+    margin: 0 auto;
+    border-radius: 20px;
+    background-image: url('../../img/BG Asset.svg'), url('../../img/Vecto.svg');
+    background-position: left -125px top -100px, right -95px top -95px;
+    background-repeat: no-repeat;
+    position: relative;
+
+    &_Back {
+        padding: 50px 0 0 24px;
+        display: flex;
+        margin: 0;
+        position: absolute;
+
+        button {
+            width: 45px;
+            height: 45px;
+            border: none;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+
+    }
+    
+    &_Header {
+        display: flex;
+        padding: 0 42px;
+        flex-direction: column;
+        align-items: center;
+        padding: 118px 0 50px 0;
+        gap:3px;
+        border-radius: 20px 20px 0  0;
+        overflow: hidden;
+        z-index: 2;
+        
+        
+        h2 {
+            height: 36px;
+            font-size: 30px;
+            font-family: 'SenBald';
+            color: white;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        h5 {
+            height: 26px;
+            font-family: 'Sen';
+            font-size: 16px;
+            font-weight: 100;
+            display: flex;
+            align-items: center;
+            color: white;
+            margin: 0;
+        }
+    }
+
+    &_Hero {
+        border-radius: 20px 20px 0 0 ;
+        height: 100vh;
+        padding: 0 24px;
+        display: flex;
+        flex-direction: column;
+        z-index: 3;
+        background: #ffffff;
+        padding: 0 24px;
+
+        &_Input_In {
+            display: flex;
+            flex-direction: column;
+            height: 220px;
+            
+             input {
+                height: 62px;
+                color: #32343E;
+                background: #F0F5FA;
+                padding-left: 19px;
+                border: none;
+                border-radius: 10px;
+                font-family: 'Sen';
+                margin: 0;
+
+            
+            }
+            input::placeholder {
+                color: #A0A5BA;
+
+            }
+
+            label {
+                padding: 24px 0 8px 0;
+                font-family: 'Sen';
+                font-size: 13.4px;
+                margin: 0;
+            }
+
+        }
+
+         &_Input_Up {
+            display: flex;
+            flex-direction: column;
+            height: 440px;
+            
+            input {
+                height: 62px;
+                color: #32343E;
+                background: #F0F5FA;
+                padding-left: 19px;
+                border: none;
+                border-radius: 10px;
+                font-family: 'Sen';
+                margin: 0;
+
+            
+            }
+            input::placeholder {
+                color: #A0A5BA;
+
+            }
+
+            label {
+                padding: 24px 0 8px 0;
+                font-family: 'Sen';
+                font-size: 13.4px;
+                margin: 0;
+            }
+
+        }
+        &_CheckBoxAndForgotPW {
+            display: flex;
+            flex-direction: row;
+            height: 20px;
+            justify-content: space-between;
+            margin-top: 24px;
+
+            div {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                width: 119px;
+                justify-content: space-between;
+                gap: 10px;
+                
+                input[type="checkbox"] {
+                    appearance:none;
+                    -webkit-appearance: none;
+                    width: 20px;
+                    height: 20px;
+                    border: 2px solid #E3EBF2;
+                    border-radius: 5px;
+                    background: white;
+                    margin: 0;
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+                }
+                input[type="checkbox"]:checked {
+                    background-color: #4caf50;
+                    border: #4caf50;
+                    
+                }
+
+                input[type="checkbox"]:checked::after {
+                    content: "✔";
+                    color: white;
+                    font-size: 14px;
+                    display: block;
+                    text-align: center;
+                    justify-content: start;
+                }
+
+                p {
+                    font-family: 'Sen';
+                    font-size: 13px;
+                    color: #7E8A97 ;
+                }
+
+            }
+            button {
+                font-family: 'Sen';
+                font-weight: 200;
+                background: none;
+                font-size: 14px;
+                color: #FF7622;
+                border: none;
+                margin: 0;
+                cursor: pointer;
+                 &:hover {
+                    opacity: 0.7;
+                 }
+                }
+                
+            }
+            
+            &_Btn {
+                margin-top:29px ;
+                width: 100%;
+                height:62px;
+                background: #FF7622;
+                color: #ffffff;
+                font-family: 'SenBald';
+                font-size: 14px;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                border-radius: 12px;
+                cursor: pointer;
+                &:hover {
+                    opacity: 0.7;
+                    }
+        
+                } 
+
+            &_SignUp {
+                margin-top: 38px;
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+
+                p {
+                    color: #646982;
+                    font-family: 'Sen';
+                    font-size: 16px;
+                    margin: 0;
+
+                }
+
+                button {
+                    color: #FF7622;
+                    font-family: 'SenBald';
+                    font-size: 14px;
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    margin: 0;
+                    &:hover {
+                        opacity: 0.7;
+
+                    }
+                }
+            }
+
+            
+            &_SignInOptions {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 39px ;
+                flex-direction: column;
+                
+                h5 {
+                    display: flex;
+                    justify-content: center;
+                    font-family: 'Sen';
+                    font-size: 16px;
+                    color:#646982 ;
+    
+                }
+                button {
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                }
+                
+            }
+        }
+        
+        
+        
+}  

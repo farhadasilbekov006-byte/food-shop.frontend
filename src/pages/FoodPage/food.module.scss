@@ -1,0 +1,311 @@
+.FoodPage {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 375px;
+    width: 100%;
+    position: relative;
+    
+
+
+    &_Header {
+        display: flex;
+        height: 45px;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        margin-top: 50px;
+        z-index: 2;
+        left: 24px;
+        right: 24px;
+
+        
+
+
+        button {
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 5px rgba(0 , 0, 0 , 0.3);
+            background: white;
+            cursor: pointer;
+              &:hover,:active {
+                opacity: 0.7;
+              }
+        }
+    }
+
+    &_Img {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        height: 321px;
+        z-index: 1;
+        border-radius: 30px;
+        
+        img {
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+
+    &_Main {
+        padding: 0 24px;
+
+        h2 {
+            font-family: 'SenBald';
+            color:#181C2E ;
+            font-size: 20px;
+        }
+
+        &_Info {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 19.25px;
+    
+            &_Desc {
+                display: flex;
+                flex-direction: row;
+                height: 20px;
+                width: 100%;
+                gap: 36.25px;
+    
+                span {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    justify-content: start;
+                    gap: 10px;
+                }
+            }
+        }
+    
+        &_Description {
+            display: flex;
+            margin-bottom: 20px;
+            p {
+                margin: 0;
+                display: flex;
+                font-size: 14px;
+                font-family: 'Sen';
+                color: #A0A5BA;
+
+            }
+        }
+
+        &_Size {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+
+            h4 {
+                font-family: 'Sen';
+                font-weight: 300;
+                color: grey;
+                margin-right: 15px;
+            }
+
+            div {
+              width: 100%;
+              display: flex;
+              gap: 10px;
+              flex-direction: row;
+              margin: 0;
+                
+            }
+            &_Btn {  
+              font-family: 'Sen';
+              background: #F0F5FA;
+              color: #121223;
+              font-weight: 400;
+              display: flex;
+              height: 48px;
+              width: 48px;
+              border-radius: 50%;
+              border: none;
+              font-size: 16px;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+
+              &:hover {
+                  opacity: 0.7;
+              }
+            
+            
+        }
+        &_ActiveBtn {
+            color: white;
+            background: #FF7622;
+        }
+
+        }
+        
+        &_Ingredients {
+
+            h3 {
+                font-family:'Sen';
+                font-weight: 300;
+                font-size: 16px;
+            }
+           
+            &_Item {
+
+            width: 100%;
+            height:auto ;
+            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(50px , 1fr));
+            gap: 19px;
+        
+
+
+
+                div {
+                    width: 100%; 
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    height: 73px;
+    
+                     h2 {
+                        margin: 0;
+                        font-family: 'Sen';
+                        font-weight: 300;
+                        font-size: 12px;
+                     }
+                    
+                     
+                      div {
+                        display: flex;
+                        width: 50px;
+                        height: 50px;
+                        overflow: hidden;
+                        background: #FFEBE4;
+                        border-radius: 50%;
+                        align-items: center;
+                        justify-content: center;
+                        
+    
+                        img {
+                            width: 50%;
+                            height: 50%;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                      }
+                }
+            }
+
+
+
+        }
+
+    }
+    
+    &_AddToCart {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 164px;
+        padding-top: 20px;
+        border-top-left-radius:24px;
+        border-top-right-radius:24px;
+        position: sticky;
+        bottom: 0;
+        background: #F0F5FA;
+
+        &_Qty {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: 24px;
+
+            h3{
+                margin: 0;
+                display: flex;
+                align-items: center;
+                font-family: 'Sen';
+                font-weight: 300;
+                font-size: 28px;
+                margin-left: 24px;
+
+            }
+  
+            div {
+                display: flex;
+                flex-direction: row;
+                width: 97px;
+                height: 48px;
+                background: #121223;
+                justify-content: space-between;
+                border-radius: 50px;
+                align-items: center;
+                margin-right: 24px;
+                padding: 0 14px;
+                
+                
+
+                button {
+                    background: transparent;
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    border: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0;
+                    cursor: pointer;
+                     &:hover {
+                        opacity: 0.7;
+                     }
+                    
+                }
+
+                span {
+                    width: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+
+                }
+                
+            }
+
+        }
+        &_Btn {
+            padding: 0 24px;
+            height: 62px;
+            display: flex;
+            
+            
+              button {
+                width: 100%;
+                height: 100%;
+                border-radius: 12px;
+                border: none;
+                font-family: 'SenBald';
+                color: white;
+                background: #FF7622;
+                cursor: pointer;
+                 &:hover {
+                    opacity: 0.7;
+                 }
+              }
+        }
+    }
+
+    
+
+}

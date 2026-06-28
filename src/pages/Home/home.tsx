@@ -2,23 +2,59 @@ import style from './home.module.scss'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
 import "swiper/css/free-mode";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { data, useNavigate } from 'react-router-dom';
 export const HomePage = () => {
 
     const [search ,setSearch] = useState('')
+    const [products, setProducts] = useState([])
+    const navigate = useNavigate()
+    const [food, setFood] = useState([])
 
-    // const 
+    const getProducts = async () => {
+        const query = search.trim()
+        if (!query) return
+
+        const res = await fetch (`/api/product?name=${query}`)
+        const data = await res.json()
+        setProducts(data)
+        console.log(data)
+    }
+
+    const getCart = async () => {
+      navigate('/cart')
+      console.log(data)
+}
+
+
+    useEffect(() => {
+        if (search.trim()) {
+            getProducts()
+        }
+    }, [search])
+
+
+
     return (
         <div className={style.HomePage}>
             <div className={style.HomePage_Header}>
-                <button><img width="45px" src="../../img/Menu.svg" alt="menu" /></button>
+                <button onClick={getCart}><img width="45px" src="../../img/Menu.svg" alt="menu" /></button>
                 <img width="100px" src="../../img/Logo.svg" alt="Logo" />
                 <button className={style.HomePage_Header_CartBtn}><img width="18px" src="../../img/cart.svg" alt="cart"/></button>
+            </div>
+
+            <div className={style.HomePage_Welcome}>
+                <h3>
+                    Hey Halal, Good Afternoon!
+                </h3>
             </div>
             
             <div className={style.HomePage_Input}>
                <img width="15px" src="../../img/Search.svg" alt="search" />
-               <input type="search" placeholder='Search...'/>
+               <input 
+                  placeholder='Search...'
+                onFocus={() => navigate('/search')}
+                  />
             </div>
 
             <div className={style.HomePage_Categories}>
@@ -77,6 +113,21 @@ export const HomePage = () => {
                 <h2>Open Restaurants</h2>
                 <button>See All <img width="5px" src="../../img/Vector (1).svg" alt="vector" /> </button>
             </div>
+
+            
+                  {products.length > 0 && (
+        <div className={style.HomePage_Results}>
+            <div><h2>Suggested Restaurants</h2></div>
+          {products.map((p) => (
+            <div key={p._id} className={style.ProductCard}>
+              <h1>{p.name}</h1>
+              <img src={p.image} alt={p.name} />
+              <p>{p.price} сом</p>
+              <p>{p.description}</p>
+            </div>
+          ))}
+        </div>
+      )}
 
             <div className={style.HomePage_Restaurant}>
                 <div>
