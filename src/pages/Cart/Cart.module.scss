@@ -6,8 +6,10 @@
     display: flex;
     flex-direction: column;
     background: #121223;
-    padding: 0 24px;
     gap: 24px;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 24px;
 
     &_Header {
         margin-top: 50px;
@@ -67,19 +69,19 @@
     }
 
     &_Items {
-        background: red;
         height: 117px;
         width: 100%;
         display: flex;
         flex-direction: row;
         gap: 20px;
 
+        
+
         &_Img {
             display: flex;
-            width: 136px;
+            width: 37%;
             height: 117px;
             overflow: hidden;
-            background: pink;
             
             
             img {
@@ -91,21 +93,27 @@
         }
 
         &_Info {
+            width: 63%;
             display: flex;
             flex-direction: column;
-            background: blue;
+            gap: 10px;
             margin: 0;
+            justify-content: space-between;
+            
 
             &_NameAndDeleteBtn {
-                background: red;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
+                height: 30%;
+                
 
                 h2 {
                     font-family: 'Sen';
                     font-size: 18px;
+                    font-weight: 200;
                     margin: 0;
+                    color: #ffffff;
                 }
 
                 button {
@@ -117,6 +125,7 @@
                     display: flex;
                     overflow: hidden;
                     padding: 0;
+                    cursor: pointer;
 
                     img {
                         width: 100%;
@@ -127,9 +136,179 @@
                 }
 
             }
+
+            strong  {
+                color: #ffffff;
+                font-family: 'SenBald';
+                font-size: 20px;
+                margin: 0;
+                padding: 0;
+            }
+
+            &_SizeAndQty {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 28px;
+
+                p {
+                    font-family: 'Sen';
+                    font-size: 18px;
+                    opacity: 50%;
+                    color: #ffffff;
+                }
+
+                &_Update{
+                    width: 89px;
+                    height: 22px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    button {
+                        width: 22px;
+                        height: 22px;
+                        background: none;
+                        border: none;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0;
+                        padding: 0;
+                        cursor: pointer;
+
+
+                        img {
+                            width: 100%;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                    }
+
+                    span {
+                        color: #ffffff;
+                        font-family: "SenBald";
+                        font-size: 16px ;
+                    }
+                }
+                
+            }
         } 
+
     }
 
+    .OrderInfo {
+        position: absolute;
+        background: #ffffff;
+        border-top-left-radius: 27px;
+        border-top-right-radius: 27px;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        height: 310px;
+        padding: 24px 24px 30px 24px ;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        
+        &_Delivery_Address {
+           display: flex;
+           flex-direction: row;
+           height: 24px;
+           justify-content: space-between;
+           align-items: center;
+           margin-bottom:10px ;
+
+           h3 {
+            color: #A0A5BA;
+            font-size: 14px;
+            font-family: 'Sen';
+            font-weight: 200;
+        
+           }
+
+           button {
+            background: none;
+            border: none;
+            text-decoration: underline;
+            color: #FF7622;
+            cursor: pointer;
+           }
+        }
+
+        &_Enter_Address {
+            width: 100%;
+            height: 62px;
+            
+
+            input {
+                box-sizing: border-box;
+                height: 100%;
+                width: 100%;
+                border-radius: 10px;
+                border: none;
+                padding-left: 10px;
+                background: #F0F5FA;
+                color: #32343E ;
+                font-family: 'Sen';
+                font-size: 16px;
+            }
+        }
+
+        &_TotalPriceAndBreakdown {
+            padding: 30px 0 32px 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+
+            &_Left {
+                h3 {
+                    font-family: "Sen";
+                    font-size: 14px;
+                    color: #A0A5BA;
+                    font-weight: 200;
+                }
+                strong {
+                    font-family: 'Sen';
+                    font-size: 30px;
+                    align-items: center;
+                    justify-content: center
+                };
+            }
+
+                button {
+                   background: none;
+                   border: none;
+                   color: #FF7622;
+                   font-family: 'Sen';
+                   font-size: 14px;
+                   display: flex;
+                   align-items: center;
+                   gap: 7px;
+                }
+            }
+
+            &_OrderBtn {
+                height: 62px;
+
+                button {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: none;
+                    background: #FF7622;
+                    color: #ffffff;
+                    font-family: 'SenBald';
+                    cursor: pointer;
+                }
+            }
+    }
     
 
 }

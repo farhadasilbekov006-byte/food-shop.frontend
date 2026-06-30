@@ -30,6 +30,46 @@ export const CartPage = () => {
     
     const [ food, setFood] = useState<Cart | null>(null)
     const navigate = useNavigate()
+    const total = 
+     food?.items.reduce(
+        (acc, item ) => acc + item.productId.price * item.qty,
+        0
+     ) ?? 0
+    
+    const plus = async (id: string) => {
+        setFood(prev => {
+            if(!prev) return prev;
+            
+            return {
+                ...prev,
+                items: prev.items.map(item => 
+                    item._id === id
+                    ? {...item, qty: item.qty + 1}
+                    : item
+                )
+            }
+        })
+    }
+
+    const minus = async (id:string) => {
+       setFood(prev => {
+        if(!prev) return prev;
+
+        return {
+            ...prev,
+            items: prev.items.map(item =>
+                item._id === id
+                ? {
+                    ...item,
+                    qty: item.qty > 1
+                    ? item.qty - 1
+                    : 1
+                }
+                : item
+            )
+        }
+       })
+    }
 
     const getCart = async () => {
         const token = localStorage.getItem('token')
@@ -78,22 +118,41 @@ export const CartPage = () => {
                         <h2>{item.productId.name}</h2>
                         <button><img src="../../img/btnDel.svg" alt="BtnDel" /></button>
                     </div>
-                    <strong>{item.productId.price}</strong>
+                    <strong>${item.productId.price}</strong>
                     <div className={style.cartPage_Items_Info_SizeAndQty}>
-                        <p>{item.selectedSize.name}</p>
+                        <p>{item.selectedSize.name}'’</p>
                         <div className={style.cartPage_Items_Info_SizeAndQty_Update}>
-                            <button>+<img src="../../img/plus.svg" alt="plus" /></button>
+                            <button onClick={() => plus(item._id)}><img src="../../img/plus.svg" alt="plus" /></button>
                             <span>{item.qty}</span>
-                            <button>-<img src="../../img/minus.svg" alt="minus" /></button>
+                            <button onClick={() => minus(item._id)}><img src="../../img/minus.svg" alt="minus" /></button>
                         </div>
                     </div>
                 </div>
             </div>
             ))}
 
-            <div>
-                hello
-            </div>
+            <form className={style.OrderInfo}>
+                <div className={style.OrderInfo_Delivery_Address}>
+                    <h3>DELIVERY ADDRESS</h3>
+                    <button>EDIT</button>
+                </div>
+                <div className={style.OrderInfo_Enter_Address}>
+                    <input
+                    type="text"
+                    onInvalid={(e) => e.currentTarget.setCustomValidity('Enter address')} 
+                    placeholder='Address' />
+                </div>
+                <div className={style.OrderInfo_TotalPriceAndBreakdown}>
+                    <div className={style.OrderInfo_TotalPriceAndBreakdown_Left}>
+                      <h3>TOTAL:</h3>
+                      <strong>${total}</strong>
+                    </div>
+                        <button>Breakdown <img src="../../img/Vector (1).svg" alt="Direction" /></button>
+                </div>
+                <div className={style.OrderInfo_OrderBtn}>
+                    <button>PLACE ORDER</button>
+                </div>
+            </form>
         </div>
     )
 }
